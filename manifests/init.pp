@@ -251,7 +251,7 @@ class nfs(
   String $client_gssdopt_name                                                         = $::nfs::params::client_gssdopt_name,
   Boolean $client_d9_gssdopt_workaround                                               = false,
   String $nfs_v4_export_root                                                          = $::nfs::params::nfs_v4_export_root,
-  String $nfs_v4_export_root_clients                                                  = $::nfs::params::nfs_v4_export_root_clients,
+  Variant[String, Array] $nfs_v4_export_root_clients                                                  = $::nfs::params::nfs_v4_export_root_clients,
   String $nfs_v4_mount_root                                                           = $::nfs::params::nfs_v4_mount_root,
   String $nfs_v4_idmap_domain                                                         = $::nfs::params::nfs_v4_idmap_domain,
   Variant[String, Array] $nfs_v4_idmap_localrealms                                    = '',

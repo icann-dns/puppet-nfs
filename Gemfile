@@ -12,8 +12,8 @@ end
 
 group :test do
   gem 'metadata-json-lint',                                         require: false
-  gem 'puppet-blacksmith',                                          require: false, git: 'https://github.com/voxpupuli/puppet-blacksmith.git'
-  gem 'puppet-lint',                                                require: false, git: 'https://github.com/rodjek/puppet-lint.git'
+  gem 'puppet-blacksmith',                                          require: false
+  gem 'puppet-lint',                                                require: false
   gem 'puppet-lint-absolute_classname-check',                       require: false
   gem 'puppet-lint-classes_and_types_beginning_with_digits-check',  require: false
   gem 'puppet-lint-leading_zero-check',                             require: false
@@ -28,12 +28,13 @@ group :test do
   gem 'rake',                                                       require: false
   gem 'rspec',                                                      require: false
   gem 'rspec-core',                                                 require: false
-  gem 'rspec-puppet',                                               require: false, git: 'https://github.com/puppetlabs/rspec-puppet.git'
+  gem 'rspec-puppet',                                               require: false
   gem 'rspec-puppet-facts',                                         require: false
   gem 'rspec-puppet-utils',                                         require: false
   gem 'rubocop',                                                    require: false
   gem 'rubocop-rspec',                                              require: false
-  gem 'voxpupuli-release',                                          require: false, git: 'https://github.com/voxpupuli/voxpupuli-release-gem.git'
+  gem 'sync',                                                       require: false
+  gem 'voxpupuli-release',                                          require: false
 end
 
 group :development do
@@ -56,7 +57,7 @@ else
   gem 'facter', require: false, groups: [:test]
 end
 
-puppetversion = ENV['PUPPET_VERSION'].nil? ? '~> 4.0' : ENV['PUPPET_VERSION'].to_s
+puppetversion = ENV['PUPPET_VERSION'].nil? ? '~> 6.0' : ENV['PUPPET_VERSION'].to_s
 gem 'puppet', puppetversion, require: false, groups: [:test]
 
 # vim:ft=ruby
