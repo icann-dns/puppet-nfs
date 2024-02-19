@@ -33,6 +33,7 @@ group :test do
   gem 'rspec-puppet-utils',                                         require: false
   gem 'rubocop',                                                    require: false
   gem 'rubocop-rspec',                                              require: false
+  gem 'sync',                                                       require: false
   gem 'voxpupuli-release',                                          require: false
 end
 
@@ -56,7 +57,7 @@ else
   gem 'facter', require: false, groups: [:test]
 end
 
-puppetversion = ENV['PUPPET_VERSION'].nil? ? '~> 4.0' : ENV['PUPPET_VERSION'].to_s
+puppetversion = ENV['PUPPET_VERSION'].nil? ? '~> 6.0' : ENV['PUPPET_VERSION'].to_s
 gem 'puppet', puppetversion, require: false, groups: [:test]
 
 # vim:ft=ruby
